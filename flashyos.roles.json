@@ -1,0 +1,96 @@
+{
+  "x-generated": "estate-charter/1; 2026-11-02; every role is one standing job, and five roles are five agents",
+  "aao": "0.1",
+  "name": "Spec Templates",
+  "slug": "spec-templates",
+  "description": "Spec Templates — the scaffolding a new spec repository in this estate is authored from: the honest not-yet-migrated shell pattern, the AAO charter shape, the shared hygiene files, and the test that keeps a shell's docs honest about what is and is not runnable yet. AAO expands to Agentic Autonomous Organization.",
+  "accountableTo": "michael@gda.capital",
+  "escalation": "template",
+  "repositories": [
+    {
+      "name": "spec-templates",
+      "url": "github.com/flashyos-specs/spec-templates",
+      "default": true,
+      "holds": [
+        "templates",
+        "generator",
+        "hygiene-files"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "template",
+      "family": "governance",
+      "purpose": "Publishes and maintains the scaffolding templates and the generation rules a new spec repository in this estate is authored from.",
+      "measure": "Shells scaffolded from this repository's own generator, as a share of new spec repositories opened",
+      "capabilities": [
+        "publish-template",
+        "revise-template"
+      ],
+      "humanApprovalAtOrAbove": "HIGH",
+      "x-capability": [
+        "content-exchange"
+      ],
+      "worksIn": [
+        "spec-templates"
+      ]
+    },
+    {
+      "name": "conformance",
+      "family": "engineering",
+      "purpose": "Runs the checker over the templates themselves, and over anything scaffolded from them, and reports which cases pass rather than a green tick that read nothing.",
+      "measure": "honesty.test.mjs cases passing, as a share of the committed suite",
+      "capabilities": [
+        "run-vectors",
+        "check-fragment"
+      ],
+      "humanApprovalAtOrAbove": "LOW",
+      "worksIn": [
+        "spec-templates"
+      ]
+    },
+    {
+      "name": "release",
+      "family": "operations",
+      "purpose": "Cuts versioned releases of the template set with a changelog entry, so a version says what the templates will refuse and never moves once it ships.",
+      "measure": "Releases with a changelog entry, as a share of tags",
+      "capabilities": [
+        "tag-version",
+        "publish-package"
+      ],
+      "humanApprovalAtOrAbove": "MEDIUM",
+      "worksIn": [
+        "spec-templates"
+      ]
+    },
+    {
+      "name": "adoption",
+      "family": "growth",
+      "purpose": "Helps a new spec repository bootstrap from these templates and records how many have, because a template nobody has used is not yet worth keeping.",
+      "measure": "Spec repositories scaffolded from this generator, as a share of new spec repositories opened",
+      "capabilities": [
+        "guide-adopter",
+        "record-adopter"
+      ],
+      "humanApprovalAtOrAbove": "LOW",
+      "worksIn": [
+        "spec-templates"
+      ]
+    },
+    {
+      "name": "review",
+      "family": "risk",
+      "purpose": "Reviews a proposed change to the templates before it lands, because a change to the scaffold changes every spec repository authored from it afterward.",
+      "measure": "Template changes carrying an approving review, as a share of merges",
+      "capabilities": [
+        "review-proposal",
+        "approve-change"
+      ],
+      "humanApprovalAtOrAbove": "HIGH",
+      "worksIn": [
+        "spec-templates"
+      ]
+    }
+  ]
+}
